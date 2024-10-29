@@ -33,6 +33,7 @@
     width: 70%;
     color: white;
     font-size: 30px;
+    padding: 0 25px 0 25px;
 }
 
 .footer {
@@ -41,4 +42,15 @@
     height: 120px;
     text-align: center;
     color: white;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #282c34;
+}
+
+
+.activeNavLink {
+    color: #7fb8f1;
+    text-decoration: underline;
 }
