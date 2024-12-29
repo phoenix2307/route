@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import {_App} from './_App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import {New_App} from "./nepomniaschiy/app/New_App";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,7 +12,8 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         {/*<App/>*/}
-        <_App/>
+        {/*<_App/>*/}
+        <New_App/>
     </BrowserRouter>
 );
 

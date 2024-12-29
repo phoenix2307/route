@@ -53,7 +53,7 @@ export const _App = () => {
                             <Route path={PATH.PATH3} element={<PageThree/>}></Route>
                             <Route path={PATH.ERROR} element={<Error404/>}></Route>
 
-                            <Route path={'*'} element={<Error404/>}></Route>
+                            <Route path={'*'} element={<Navigate to={PATH.ERROR}/>}></Route>
 
 
                         </Routes>
