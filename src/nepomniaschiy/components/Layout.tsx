@@ -5,23 +5,34 @@
 //Підключається <Layout> в App як кореневий парний <Route>, куди поміщаються
 //усі дочірні роути, вони є цим <Outlet/>
 
-import {Link, Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
+import styles from "../../components/Site.module.css";
+import React from "react";
+import {PATH} from "../app/New_App";
+import {CustomLink} from "./CustomLink";
 
 export const Layout = () => {
+
     return (
         <>
-            <header>
-                <Link to={'/'}>Home</Link>
-                <Link to={'/'}>Page1</Link>
-                <Link to={'/'}>Page2</Link>
-                <Link to={'/'}>Page3</Link>
-            </header>
-            <main>
-                <Outlet/>
-            </main>
-            <footer>
-                2025
-            </footer>
+            <div className={styles.header}><h1>HEADER</h1></div>
+            <div className={styles.body}>
+                <div className={styles.nav}>
+
+
+                    <div className={styles.testDiv}>
+                        <CustomLink to={PATH.POSTS}>Blog</CustomLink>
+                        <CustomLink to={PATH.PATH1}>Adidas</CustomLink>
+                        <CustomLink to={PATH.PATH2}>Puma</CustomLink>
+                        <CustomLink to={PATH.PATH3}>Abi - bas</CustomLink>
+                    </div>
+                </div>
+
+                <div className={styles.content}>
+                    <Outlet/>
+                </div>
+            </div>
+            <div className={styles.footer}> abibas 2023</div>
         </>
     )
 }

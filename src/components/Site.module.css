@@ -32,7 +32,7 @@
     min-height: 400px;
     width: 70%;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     padding: 0 25px 0 25px;
 }
 
@@ -52,5 +52,17 @@
 
 .activeNavLink {
     color: #7fb8f1;
+    text-decoration: underline;
+}
+
+.testDiv {
+    margin-left: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testActiveNavLink {
+    color: #1dd77a;
     text-decoration: underline;
 }
