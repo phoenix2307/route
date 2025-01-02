@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import {CustomLink} from "../components/CustomLink";
 
 export type Post = {
     userId: number;
@@ -24,7 +23,7 @@ export const Posts = () => {
                         <>
                             <Link key={post.id} to={`/posts/${post.id}`}
                                   style={{color: 'white'}}>
-                                <h3>{post.title}</h3>
+                                <h4>{post.title}</h4>
                             </Link>
                         </>
                     )

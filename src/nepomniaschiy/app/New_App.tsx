@@ -8,6 +8,8 @@ import {PageThree} from "../pages/PageThree";
 import {Layout} from "../components/Layout";
 import {Posts} from "../pages/Posts";
 import {SinglePage} from "../pages/SinglePage";
+import {CreatePost} from "../pages/CreatePost";
+import {EditPost} from "../pages/EditPost";
 
 export const PATH = {
     HOME: '/',
@@ -16,6 +18,8 @@ export const PATH = {
     PATH3: '/page3',
     POSTS: '/posts',
     POSTS_PARAMS: '/posts/:id',
+    NEW_POST: '/posts/new',
+    EDIT_POST: '/posts/:id/edit',
     ERROR: '*',
 } as const
 
@@ -27,6 +31,8 @@ export const New_App = () => {
 
                     <Route path={PATH.POSTS} element={<Posts/>}/>
                     <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
+                    <Route path={PATH.NEW_POST} element={<CreatePost/>}/>
+                    <Route path={PATH.EDIT_POST} element={<EditPost/>}/>
                     <Route path={PATH.PATH1} element={<PageOne/>}/>
                     <Route path={PATH.PATH2} element={<PageTwo/>}/>
                     <Route path={PATH.PATH3} element={<PageThree/>}/>

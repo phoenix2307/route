@@ -32,7 +32,7 @@ export const Layout = () => {
                     <Outlet/>
                 </div>
             </div>
-            <div className={styles.footer}> abibas 2023</div>
+            <div className={styles.footer}> React RouterDom 2024</div>
         </>
     )
 }
