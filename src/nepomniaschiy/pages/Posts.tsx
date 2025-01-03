@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import {PATH} from "../app/New_App";
 
 export type Post = {
     userId: number;
@@ -17,6 +18,7 @@ export const Posts = () => {
     return (
         <div>
             <h3>POSTS</h3>
+            <Link to={PATH.NEW_POST} style={{color: 'cadetblue'}}>Add new post</Link>
             {posts.length > 0
                 ? posts.map(post => {
                     return (

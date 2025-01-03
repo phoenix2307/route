@@ -37,6 +37,7 @@ export const New_App = () => {
                     <Route path={PATH.PATH2} element={<PageTwo/>}/>
                     <Route path={PATH.PATH3} element={<PageThree/>}/>
                     <Route path={PATH.ERROR} element={<Error404/>}/>
+
                 </Route>
             </Routes>
         </div>
