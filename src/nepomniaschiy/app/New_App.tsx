@@ -6,8 +6,8 @@ import {PageTwo} from "../pages/PageTwo";
 import {Error404} from "../pages/Error404";
 import {PageThree} from "../pages/PageThree";
 import {Layout} from "../components/Layout";
-import {Posts} from "../pages/Posts";
-import {SinglePage} from "../pages/SinglePage";
+import {blogLoader, Posts} from "../pages/Posts";
+import {postLoader, SinglePage} from "../pages/SinglePage";
 import {CreatePost} from "../pages/CreatePost";
 import {EditPost} from "../pages/EditPost";
 import {Home} from "../pages/Home";
@@ -39,8 +39,8 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path={'team'} element={<p>Our team</p>}/>
         </Route>
         <Route path={'about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
-        <Route path={PATH.POSTS} element={<Posts/>}/>
-        <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
+        <Route path={PATH.POSTS} element={<Posts/>} loader={blogLoader}/>
+        <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>} loader={postLoader}/>
         <Route path={PATH.NEW_POST}
                element={<RequireAuth> <CreatePost/> </RequireAuth>}
         />

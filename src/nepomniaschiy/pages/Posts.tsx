@@ -1,5 +1,4 @@
-import {useEffect, useState} from "react";
-import {Link, useSearchParams} from "react-router-dom";
+import {Link, useLoaderData, useSearchParams} from "react-router-dom";
 import {PATH} from "../app/New_App";
 import {BlogFilter} from "../components/BlogFilter";
 
@@ -10,19 +9,14 @@ export type Post = {
     body: string;
 }
 export const Posts = () => {
-    const [posts, setPosts] = useState<Post[]>([])
+    const posts: any = useLoaderData()
     const [searchParams, setSearchParams] = useSearchParams()
+
     const postQuery = searchParams.get('post') || '' // дає всі сторінки, де в адресі є post запит
     const latest = searchParams.has('latest') // boolean
 
     const startsFrom = latest ? 90 : 1 //post id
 
-
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(res => res.json())
-            .then(data => setPosts(data))
-    }, [])
     return (
         <div>
             <h3>POSTS</h3>
@@ -37,8 +31,8 @@ export const Posts = () => {
             </Link>
             {posts.length > 0
                 ? posts
-                    .filter(post => (post.title.includes(postQuery)) && post.id >= startsFrom)
-                    .map(post => {
+                    .filter((post: Post) => (post.title.includes(postQuery)) && post.id >= startsFrom)
+                    .map((post: Post) => {
                         return (
                             <>
                                 <Link key={post.id} to={`/posts/${post.id}`}
@@ -56,3 +50,10 @@ export const Posts = () => {
         </div>
     )
 }
+
+ export const blogLoader = async ({request, params}: any) => {
+    console.log(request, params)
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    return res.json()
+}
+
