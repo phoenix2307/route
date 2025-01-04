@@ -6,8 +6,12 @@ type CustomLinkType = {
 }
 
 export const CustomLink = (props: CustomLinkType) => {
-    const match = useMatch(props.to)
+
     const {children, to, ...rest} = props
+    const match = useMatch({
+        path: to,
+        end: to.length === 1
+    })
     return (
         <Link to={to}
                 style={{textDecoration: 'none', color: match? '#03eaff': 'black'}} {...rest}>

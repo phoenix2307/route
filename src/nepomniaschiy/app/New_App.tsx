@@ -18,15 +18,15 @@ import {AuthProvider} from "../hoc/AuthProvider";
 
 export const PATH = {
     HOME: '/',
-    ABOUT: '/about',
-    LOGIN: '/login',
-    PATH1: '/page1',
-    PATH2: '/page2',
-    PATH3: '/page3',
-    POSTS: '/posts',
-    POSTS_PARAMS: '/posts/:id',
-    NEW_POST: '/posts/new',
-    EDIT_POST: '/posts/:id/edit',
+    ABOUT: 'about',
+    LOGIN: 'login',
+    PATH1: 'page1',
+    PATH2: 'page2',
+    PATH3: 'page3',
+    POSTS: 'posts',
+    POSTS_PARAMS: 'posts/:id',
+    NEW_POST: 'posts/new',
+    EDIT_POST: 'posts/:id/edit',
     ERROR: '*',
 } as const
 
@@ -37,8 +37,12 @@ export const New_App = () => {
                 <Routes>
                     <Route path={PATH.HOME} element={<Layout/>}>
 
-                        <Route path={PATH.HOME} element={<Home/>}/>
-                        <Route path={PATH.ABOUT} element={<About/>}/>
+                        <Route index element={<Home/>}/>
+                        {/*<Route path={PATH.ABOUT} element={<About/>}/>*/}
+                        <Route path={'about'} element={<About/>}>
+                            <Route path={'contacts'} element={<p>Our contacts</p>}/>
+                            <Route path={'team'} element={<p>Our team</p>}/>
+                        </Route>
                         <Route path={'/about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
                         <Route path={PATH.POSTS} element={<Posts/>}/>
                         <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>

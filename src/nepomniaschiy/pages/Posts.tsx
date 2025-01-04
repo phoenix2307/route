@@ -43,7 +43,7 @@ export const Posts = () => {
                             <>
                                 <Link key={post.id} to={`/posts/${post.id}`}
                                       style={{color: 'white'}}>
-                                    <h5>{post.title}</h5>
+                                    <h5>{`${post.id}.  ${post.title}`}</h5>
                                 </Link>
                             </>
                         )

@@ -37,7 +37,7 @@ export const BlogFilter = (props: any) => {
                        checked={checked}
                        onChange={handlerCheck}/> New only
             </label>
-            <input type="submit" name={'Search'}/>
+            <input type="submit" name={'Search'} value={'search'}/>
         </form>
     );
 };
