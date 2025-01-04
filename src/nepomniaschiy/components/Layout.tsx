@@ -5,10 +5,9 @@
 //Підключається <Layout> в App як кореневий парний <Route>, куди поміщаються
 //усі дочірні роути, вони є цим <Outlet/>
 
-import {NavLink, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import styles from "../../components/Site.module.css";
 import React from "react";
-import {PATH} from "../app/New_App";
 import {CustomLink} from "./CustomLink";
 
 export const Layout = () => {
@@ -22,13 +21,13 @@ export const Layout = () => {
 
 
                     <div className={styles.testDiv}>
-                        <CustomLink to={PATH.HOME}>Home</CustomLink>
-                        <CustomLink to={PATH.ABOUT}>About</CustomLink>
-                        <CustomLink to={PATH.POSTS}>Blog</CustomLink>
+                        <CustomLink to={'/'}>Home</CustomLink>
+                        <CustomLink to={'about'}>About</CustomLink>
+                        <CustomLink to={'posts'}>Blog</CustomLink>
                         <hr/>
-                        <CustomLink to={PATH.PATH1}>Adidas</CustomLink>
-                        <CustomLink to={PATH.PATH2}>Puma</CustomLink>
-                        <CustomLink to={PATH.PATH3}>Abi - bas</CustomLink>
+                        <CustomLink to={'page1'}>Adidas</CustomLink>
+                        <CustomLink to={'page2'}>Puma</CustomLink>
+                        <CustomLink to={'page3'}>Abi - bas</CustomLink>
                     </div>
                 </div>
 

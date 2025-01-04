@@ -16,7 +16,7 @@ import {LoginPage} from "../pages/LoginPage";
 import {RequireAuth} from "../hoc/RequireAuth";
 import {AuthProvider} from "../hoc/AuthProvider";
 
-export const PATH = {
+/*export const PATH = {
     HOME: '/',
     ABOUT: 'about',
     LOGIN: 'login',
@@ -28,29 +28,29 @@ export const PATH = {
     NEW_POST: 'posts/new',
     EDIT_POST: 'posts/:id/edit',
     ERROR: '*',
-} as const
+} as const*/
 
 const router = createBrowserRouter(createRoutesFromElements(
-    <Route path={PATH.HOME} element={<Layout/>}>
+    <Route path={'/'} element={<Layout/>}>
 
         <Route index element={<Home/>}/>
-        <Route path={PATH.ABOUT} element={<About/>}>
+        <Route path={'about'} element={<About/>}>
             <Route path={'contacts'} element={<p>Our contacts</p>}/>
             <Route path={'team'} element={<p>Our team</p>}/>
         </Route>
-        <Route path={'about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
-        <Route path={PATH.POSTS} element={<Posts/>} loader={blogLoader}/>
-        <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>} loader={postLoader}/>
-        <Route path={PATH.NEW_POST}
+        <Route path={'about-us'} element={<Navigate to={'about'}/>}/>
+        <Route path={'posts'} element={<Posts/>} loader={blogLoader}/>
+        <Route path={'posts/:id'} element={<SinglePage/>} loader={postLoader}/>
+        <Route path={'posts/new'}
                element={<RequireAuth> <CreatePost/> </RequireAuth>}
         />
-        <Route path={PATH.EDIT_POST} element={<EditPost/>}/>
-        <Route path={PATH.LOGIN} element={<LoginPage/>}/>
+        <Route path={'posts/:id/edit'} element={<EditPost/>}/>
+        <Route path={'login'} element={<LoginPage/>}/>
         {/*===================================================*/}
-        <Route path={PATH.PATH1} element={<PageOne/>}/>
-        <Route path={PATH.PATH2} element={<PageTwo/>}/>
-        <Route path={PATH.PATH3} element={<PageThree/>}/>
-        <Route path={PATH.ERROR} element={<Error404/>}/>
+        <Route path={'page1'} element={<PageOne/>}/>
+        <Route path={'page2'} element={<PageTwo/>}/>
+        <Route path={'page3'} element={<PageThree/>}/>
+        <Route path={'*'} element={<Error404/>}/>
 
     </Route>
 ))
@@ -59,32 +59,6 @@ export const New_App = () => {
     return (
         <div className={'./App'}>
             <AuthProvider>
-                {/*                <Routes>
-                    <Route path={PATH.HOME} element={<Layout/>}>
-
-                        <Route index element={<Home/>}/>
-                        <Route path={PATH.ABOUT} element={<About/>}/>
-                        <Route path={'about'} element={<About/>}>
-                            <Route path={'contacts'} element={<p>Our contacts</p>}/>
-                            <Route path={'team'} element={<p>Our team</p>}/>
-                        </Route>
-                        <Route path={'/about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
-                        <Route path={PATH.POSTS} element={<Posts/>}/>
-                        <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
-                        <Route path={PATH.NEW_POST}
-                               element={<RequireAuth> <CreatePost/> </RequireAuth>}
-                        />
-                        <Route path={PATH.EDIT_POST} element={<EditPost/>}/>
-                        <Route path={PATH.LOGIN} element={<LoginPage/>}/>
-                        ===================================================
-                        <Route path={PATH.PATH1} element={<PageOne/>}/>
-                        <Route path={PATH.PATH2} element={<PageTwo/>}/>
-                        <Route path={PATH.PATH3} element={<PageThree/>}/>
-                        <Route path={PATH.ERROR} element={<Error404/>}/>
-
-                    </Route>
-                </Routes>*/}
-
                 <RouterProvider router={router}/>
             </AuthProvider>
 
