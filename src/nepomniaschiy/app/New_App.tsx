@@ -10,12 +10,15 @@ import {Posts} from "../pages/Posts";
 import {SinglePage} from "../pages/SinglePage";
 import {CreatePost} from "../pages/CreatePost";
 import {EditPost} from "../pages/EditPost";
-import {Home} from "../../components/pages/Home";
-import {About} from "../../components/pages/About";
+import {Home} from "../pages/Home";
+import {About} from "../pages/About";
+import {LoginPage} from "../pages/LoginPage";
+import {RequireAuth} from "../hoc/RequireAuth";
 
 export const PATH = {
     HOME: '/',
     ABOUT: '/about',
+    LOGIN: '/login',
     PATH1: '/page1',
     PATH2: '/page2',
     PATH3: '/page3',
@@ -37,8 +40,12 @@ export const New_App = () => {
                     <Route path={'/about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
                     <Route path={PATH.POSTS} element={<Posts/>}/>
                     <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
-                    <Route path={PATH.NEW_POST} element={<CreatePost/>}/>
+                    <Route path={PATH.NEW_POST}
+                           element={<RequireAuth> <CreatePost/> </RequireAuth>}
+                    />
                     <Route path={PATH.EDIT_POST} element={<EditPost/>}/>
+                    <Route path={PATH.LOGIN} element={<LoginPage/>}/>
+                    {/*===================================================*/}
                     <Route path={PATH.PATH1} element={<PageOne/>}/>
                     <Route path={PATH.PATH2} element={<PageTwo/>}/>
                     <Route path={PATH.PATH3} element={<PageThree/>}/>
