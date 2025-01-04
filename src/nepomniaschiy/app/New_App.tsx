@@ -10,6 +10,7 @@ import {Posts} from "../pages/Posts";
 import {SinglePage} from "../pages/SinglePage";
 import {CreatePost} from "../pages/CreatePost";
 import {EditPost} from "../pages/EditPost";
+import {Home} from "../../components/pages/Home";
 
 export const PATH = {
     HOME: '/',
@@ -29,6 +30,7 @@ export const New_App = () => {
             <Routes>
                 <Route path={PATH.HOME} element={<Layout/>}>
 
+                    <Route path={PATH.HOME} element={<Home/>}/>
                     <Route path={PATH.POSTS} element={<Posts/>}/>
                     <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
                     <Route path={PATH.NEW_POST} element={<CreatePost/>}/>

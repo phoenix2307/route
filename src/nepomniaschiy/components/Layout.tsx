@@ -14,13 +14,15 @@ import {CustomLink} from "./CustomLink";
 export const Layout = () => {
 
     return (
-        <>
+        <div className={styles.layout}>
             <div className={styles.header}><h1>HEADER</h1></div>
             <div className={styles.body}>
+
                 <div className={styles.nav}>
 
 
                     <div className={styles.testDiv}>
+                        <CustomLink to={PATH.HOME}>Home</CustomLink>
                         <CustomLink to={PATH.POSTS}>Blog</CustomLink>
                         <CustomLink to={PATH.PATH1}>Adidas</CustomLink>
                         <CustomLink to={PATH.PATH2}>Puma</CustomLink>
@@ -29,10 +31,11 @@ export const Layout = () => {
                 </div>
 
                 <div className={styles.content}>
+
                     <Outlet/>
                 </div>
             </div>
             <div className={styles.footer}> React RouterDom 2024</div>
-        </>
+        </div>
     )
 }

@@ -1,5 +1,8 @@
 
-
+.layout {
+    display: flex;
+    flex-direction: column;
+}
 
 .header {
     background-color: #000000;
@@ -16,7 +19,7 @@
 .nav{
    background-color: white;
     min-height: 400px;
-    width: 30%;
+    width: 20%;
     color:#282c34;
     font-size: 30px;
     /**/
@@ -30,7 +33,8 @@
 .content{
     background-color:#282c34;
     min-height: 400px;
-    width: 70%;
+    height: 100%;
+    width: 80%;
     color: white;
     font-size: 20px;
     padding: 0 25px 0 25px;
@@ -42,6 +46,7 @@
     height: 120px;
     text-align: center;
     color: white;
+    margin-bottom: 0;
 }
 
 .navLink {
