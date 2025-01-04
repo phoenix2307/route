@@ -1,6 +1,6 @@
 import React from "react";
 import '../../App.css'
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
 import {PageOne} from "../pages/PageOne";
 import {PageTwo} from "../pages/PageTwo";
 import {Error404} from "../pages/Error404";
@@ -11,9 +11,11 @@ import {SinglePage} from "../pages/SinglePage";
 import {CreatePost} from "../pages/CreatePost";
 import {EditPost} from "../pages/EditPost";
 import {Home} from "../../components/pages/Home";
+import {About} from "../../components/pages/About";
 
 export const PATH = {
     HOME: '/',
+    ABOUT: '/about',
     PATH1: '/page1',
     PATH2: '/page2',
     PATH3: '/page3',
@@ -31,6 +33,8 @@ export const New_App = () => {
                 <Route path={PATH.HOME} element={<Layout/>}>
 
                     <Route path={PATH.HOME} element={<Home/>}/>
+                    <Route path={PATH.ABOUT} element={<About/>}/>
+                    <Route path={'/about-us'} element={<Navigate to={PATH.ABOUT}/>}/>
                     <Route path={PATH.POSTS} element={<Posts/>}/>
                     <Route path={PATH.POSTS_PARAMS} element={<SinglePage/>}/>
                     <Route path={PATH.NEW_POST} element={<CreatePost/>}/>

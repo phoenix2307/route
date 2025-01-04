@@ -23,7 +23,9 @@ export const Layout = () => {
 
                     <div className={styles.testDiv}>
                         <CustomLink to={PATH.HOME}>Home</CustomLink>
+                        <CustomLink to={PATH.ABOUT}>About</CustomLink>
                         <CustomLink to={PATH.POSTS}>Blog</CustomLink>
+                        <hr/>
                         <CustomLink to={PATH.PATH1}>Adidas</CustomLink>
                         <CustomLink to={PATH.PATH2}>Puma</CustomLink>
                         <CustomLink to={PATH.PATH3}>Abi - bas</CustomLink>
