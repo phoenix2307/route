@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-export const NavWrapper = styled.div`
+const NavWrapper = styled.div`
   margin-left: 10px;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
 
-  & > a {
+  NavWrapper > a {
     text-decoration: none;
     color: #1e3786;
   }
@@ -17,6 +15,11 @@ export const NavWrapper = styled.div`
   }
 
   & > a:hover {
-    color: steelblue;
+    color: steelblue; /* Цвет ссылки */
   }
-  `
+`
+
+
+export const S={
+    NavWrapper,
+  }
