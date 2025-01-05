@@ -4,9 +4,6 @@ import adidasModel2 from './../../assets/Superstar_XLG_Shoes_Black_IG9777_01_sta
 import adidasModel3
     from './../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp'
 import {Link} from "react-router-dom";
-import {PATH} from "../../App";
-import {CustomModelLink} from "../CustomModelLink";
-
 
 export type AdidasItem = {
     id: string
@@ -46,8 +43,8 @@ export const Adidas = () => {
         <div>
             <h2 style={{textAlign: 'center'}}> ADIDAS</h2>
             <div style={{display: 'flex', gap: '15px', justifyContent: 'space-evenly'}}>
-                {/*{adidasArr.map(item => (
-                    <Link to={`/${item.id}`} key={item.id} >
+                {adidasArr.map(item => (
+                    <Link to={`/adidas/${item.id}`} key={item.id} >
                         <div style={{fontSize: '25px', marginLeft: '10px'}}>
                             <img src={`${item.picture}`}
                                  alt={`${item.model}`}
@@ -59,10 +56,7 @@ export const Adidas = () => {
                         </div>
                     </Link>
 
-                ))}*/}
-                {
-                    adidasArr.map(item=> <CustomModelLink item={item}/>)
-                }
+                ))}
 
             </div>
 

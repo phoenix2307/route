@@ -26,7 +26,7 @@ function App() {
                     <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.ABIBAS}>Abibas</NavLink></S.NavWrapper>
-                    <a href="page3">page3 HTML</a>
+                    {/*<a href="page3">page3 HTML</a>*/}
                 </div>
                 {/*=====================  Routes  ===============================*/}
                 <div className={styles.content}>
@@ -36,8 +36,7 @@ function App() {
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
-                        {/*<Route path={PATH.MODEL} element={<Model/>}/>*/}
-                        <Route path={'/:id'} element={<Model/>}/>
+                        <Route path={'/:company/:id'} element={<Model/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                     </Routes>

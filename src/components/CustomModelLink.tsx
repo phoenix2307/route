@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import React from "react";
-import {AdidasItem} from "./pages/Adidas";
 
 type Props = {
     item: any
@@ -9,7 +8,7 @@ type Props = {
 export const CustomModelLink = (props: Props) => {
         const {item} = props
     return(
-        <Link to={`/${item.id}`} key={item.id} >
+        <Link to={`/puma/${item.id}`} key={item.id} >
             <div style={{fontSize: '25px', marginLeft: '10px'}}>
                 <img src={`${item.picture}`}
                      alt={`${item.model}`}

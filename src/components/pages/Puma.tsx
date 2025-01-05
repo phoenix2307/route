@@ -3,7 +3,7 @@ import pumasModel1 from '../../assets/puma/puma1.jpeg'
 import pumasModel2 from '../../assets/puma/puma2.jpeg'
 import pumasModel3 from '../../assets/puma/puma3.jpeg'
 import pumasModel4 from '../../assets/puma/puma4.jpeg'
-import {CustomModelLink} from "../CustomModelLink";
+import {Link} from "react-router-dom";
 
 export type PumasItem = {
     id: string
@@ -49,8 +49,8 @@ export const Puma = () => {
         <div>
             <h2 style={{textAlign: 'center'}}>PUMA</h2>
             <div style={{display: 'flex', gap: '15px', justifyContent: 'space-evenly'}}>
-                {/*{adidasArr.map(item => (
-                    <Link to={`/${item.id}`} key={item.id} >
+                {pumasArr.map(item => (
+                    <Link to={`/puma/${item.id}`} key={item.id} >
                         <div style={{fontSize: '25px', marginLeft: '10px'}}>
                             <img src={`${item.picture}`}
                                  alt={`${item.model}`}
@@ -62,10 +62,8 @@ export const Puma = () => {
                         </div>
                     </Link>
 
-                ))}*/}
-                {
-                    pumasArr.map(item=> <CustomModelLink item={item}/>)
-                }
+                ))}
+
 
             </div>
             <p>
