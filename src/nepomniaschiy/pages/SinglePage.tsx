@@ -63,6 +63,5 @@ async function getCommentsByPost(id: any) {
 
 export const postLoader = async ({params}: any) => {
     const id = params.id
-    // console.log(getCommentsByPost(id))
     return {post: await getPostById(id), comments: getCommentsByPost(id), id}
 }

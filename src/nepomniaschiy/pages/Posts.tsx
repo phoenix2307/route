@@ -55,13 +55,15 @@ export const Posts = () => {
 
 const getPosts = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+
+    // if(!res.ok) {
+    //     throw new Response('', {status: res.status, statusText: 'Not founD'})
+    // }
+
     return res.json()
 }
 
 export const blogLoader = async () => {
-    // console.log(defer({
-    //     posts: getPosts()
-    // }).data.posts)
     return defer({
         posts: getPosts()
     })

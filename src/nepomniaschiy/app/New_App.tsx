@@ -15,6 +15,7 @@ import {About} from "../pages/About";
 import {LoginPage} from "../pages/LoginPage";
 import {RequireAuth} from "../hoc/RequireAuth";
 import {AuthProvider} from "../hoc/AuthProvider";
+import {ErrorPage} from "../pages/ErrorPage";
 
 /*export const PATH = {
     HOME: '/',
@@ -39,7 +40,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path={'team'} element={<p>Our team</p>}/>
         </Route>
         <Route path={'about-us'} element={<Navigate to={'about'}/>}/>
-        <Route path={'posts'} element={<Posts/>} loader={blogLoader}/>
+        <Route path={'posts'} element={<Posts/>} loader={blogLoader} errorElement={<ErrorPage/>}/>
         <Route path={'posts/:id'} element={<SinglePage/>} loader={postLoader}/>
         <Route path={'posts/new'}
                element={<RequireAuth> <CreatePost/> </RequireAuth>}
