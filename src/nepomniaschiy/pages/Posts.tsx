@@ -25,7 +25,7 @@ export const Posts = () => {
                         setSearchParams={setSearchParams}/>
 
             <Link
-                to={'posts/new'}
+                to={'new'}
                 style={{color: 'cadetblue'}}>
                 Add new post
             </Link>

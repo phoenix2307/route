@@ -8,8 +8,8 @@ import {PageThree} from "../pages/PageThree";
 import {Layout} from "../components/Layout";
 import {blogLoader, Posts} from "../pages/Posts";
 import {postLoader, SinglePage} from "../pages/SinglePage";
-import {CreatePost} from "../pages/CreatePost";
-import {EditPost} from "../pages/EditPost";
+import {CreatePost, createPostAction} from "../pages/CreatePost";
+import {EditPost, updatePostAction} from "../pages/EditPost";
 import {Home} from "../pages/Home";
 import {About} from "../pages/About";
 import {LoginPage} from "../pages/LoginPage";
@@ -40,12 +40,18 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path={'team'} element={<p>Our team</p>}/>
         </Route>
         <Route path={'about-us'} element={<Navigate to={'about'}/>}/>
-        <Route path={'posts'} element={<Posts/>} loader={blogLoader} errorElement={<ErrorPage/>}/>
-        <Route path={'posts/:id'} element={<SinglePage/>} loader={postLoader}/>
+        <Route path={'posts'} element={<Posts/>}
+               loader={blogLoader}
+               errorElement={<ErrorPage/>}/>
+        <Route path={'posts/:id'} element={<SinglePage/>}
+               loader={postLoader}/>
         <Route path={'posts/new'}
-               element={<RequireAuth> <CreatePost/> </RequireAuth>}
+               element={<RequireAuth><CreatePost/></RequireAuth>}
+               action={createPostAction}
         />
-        <Route path={'posts/:id/edit'} element={<EditPost/>}/>
+        <Route path={'posts/:id/edit'} element={<EditPost/>}
+               loader={postLoader}
+               action={updatePostAction}/>
         <Route path={'login'} element={<LoginPage/>}/>
         {/*===================================================*/}
         <Route path={'page1'} element={<PageOne/>}/>

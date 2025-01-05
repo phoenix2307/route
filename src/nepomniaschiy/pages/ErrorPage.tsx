@@ -2,6 +2,8 @@ import {useRouteError} from "react-router-dom";
 
 export const  ErrorPage = () => {
     const error: any = useRouteError()
+    // це тільки один з варіантів. Для обробки помилок спочатку продивитися документацію
+    // та вибрати варінт, який підходить під конкретну задачу
 
     return(
         <div>
