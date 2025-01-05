@@ -1,9 +1,73 @@
 import React from 'react';
+import pumasModel1 from '../../assets/puma/puma1.jpeg'
+import pumasModel2 from '../../assets/puma/puma2.jpeg'
+import pumasModel3 from '../../assets/puma/puma3.jpeg'
+import pumasModel4 from '../../assets/puma/puma4.jpeg'
+import {CustomModelLink} from "../CustomModelLink";
+
+export type PumasItem = {
+    id: string
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+}
+export const pumasArr: PumasItem[] = [
+    {
+        id: '1',
+        model: 'PUMA MODEL 1',
+        collection: 'new collection1',
+        price: '150$',
+        picture: pumasModel1,
+
+    },
+    {
+        id: '2',
+        model: 'PUMA MODEL 2',
+        collection: 'new collection22',
+        price: '200$',
+        picture: pumasModel2
+    },
+    {
+        id: '3',
+        model: 'PUMA MODEL 3',
+        collection: 'new collection333',
+        price: '300$',
+        picture: pumasModel3
+    },
+    {
+        id: '4',
+        model: 'PUMA MODEL 4',
+        collection: 'new collection 4444',
+        price: '450$',
+        picture: pumasModel4
+    }
+]
 
 export const Puma = () => {
     return (
         <div>
-            <h2>PUMA</h2>
+            <h2 style={{textAlign: 'center'}}>PUMA</h2>
+            <div style={{display: 'flex', gap: '15px', justifyContent: 'space-evenly'}}>
+                {/*{adidasArr.map(item => (
+                    <Link to={`/${item.id}`} key={item.id} >
+                        <div style={{fontSize: '25px', marginLeft: '10px'}}>
+                            <img src={`${item.picture}`}
+                                 alt={`${item.model}`}
+                                 style={{width: '250px', height: '250px'}}
+                            />
+                            <p>{item.model}</p>
+                            <p>{item.collection}</p>
+                            <p>{item.price}</p>
+                        </div>
+                    </Link>
+
+                ))}*/}
+                {
+                    pumasArr.map(item=> <CustomModelLink item={item}/>)
+                }
+
+            </div>
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard

@@ -17,19 +17,7 @@ import {RequireAuth} from "../hoc/RequireAuth";
 import {AuthProvider} from "../hoc/AuthProvider";
 import {ErrorPage} from "../pages/ErrorPage";
 
-/*export const PATH = {
-    HOME: '/',
-    ABOUT: 'about',
-    LOGIN: 'login',
-    PATH1: 'page1',
-    PATH2: 'page2',
-    PATH3: 'page3',
-    POSTS: 'posts',
-    POSTS_PARAMS: 'posts/:id',
-    NEW_POST: 'posts/new',
-    EDIT_POST: 'posts/:id/edit',
-    ERROR: '*',
-} as const*/
+
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path={'/'} element={<Layout/>}>

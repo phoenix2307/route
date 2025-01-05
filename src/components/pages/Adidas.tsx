@@ -3,8 +3,13 @@ import adidasModel1 from './../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_stand
 import adidasModel2 from './../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp'
 import adidasModel3
     from './../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp'
+import {Link} from "react-router-dom";
+import {PATH} from "../../App";
+import {CustomModelLink} from "../CustomModelLink";
+
 
 export type AdidasItem = {
+    id: string
     model: string;
     collection: string;
     price: string;
@@ -12,6 +17,7 @@ export type AdidasItem = {
 }
 export const adidasArr: AdidasItem[] = [
     {
+        id: '1',
         model: 'ADIDAS ADIFOM TRXN',
         collection: 'new collection1',
         price: '100200$',
@@ -19,12 +25,14 @@ export const adidasArr: AdidasItem[] = [
 
     },
     {
+        id: '2',
         model: 'ADIDAS ADIFOM SUPER',
         collection: 'new collection22',
         price: '200300$',
         picture: adidasModel2
     },
     {
+        id: '3',
         model: 'ADIDAS SUPER SUPERSKI',
         collection: 'new collection333',
         price: '300400$',
@@ -33,9 +41,32 @@ export const adidasArr: AdidasItem[] = [
 ]
 
 export const Adidas = () => {
+
     return (
         <div>
             <h2 style={{textAlign: 'center'}}> ADIDAS</h2>
+            <div style={{display: 'flex', gap: '15px', justifyContent: 'space-evenly'}}>
+                {/*{adidasArr.map(item => (
+                    <Link to={`/${item.id}`} key={item.id} >
+                        <div style={{fontSize: '25px', marginLeft: '10px'}}>
+                            <img src={`${item.picture}`}
+                                 alt={`${item.model}`}
+                                 style={{width: '250px', height: '250px'}}
+                            />
+                            <p>{item.model}</p>
+                            <p>{item.collection}</p>
+                            <p>{item.price}</p>
+                        </div>
+                    </Link>
+
+                ))}*/}
+                {
+                    adidasArr.map(item=> <CustomModelLink item={item}/>)
+                }
+
+            </div>
+
+
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
