@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import {Navigate, NavLink, Outlet, Route, Routes} from 'react-router-dom';
 import {Error404} from "./components/pages/Error404";
 import {Adidas} from "./components/pages/Adidas";
 import {Puma} from "./components/pages/Puma";
@@ -30,10 +30,14 @@ function App() {
                     <S.NavWrapper><NavLink to={PATH.ABIBAS}>Abibas</NavLink></S.NavWrapper>
                     <hr style={{border: '0px'}}/>
                     <S.NavWrapper><NavLink to={PATH.PRICES}>Prices for dealers</NavLink></S.NavWrapper>
+                    <S.NavWrapper><NavLink to={"/protectedPage"}>Protected page</NavLink></S.NavWrapper>
                 </div>
                 {/*=====================  Routes  ===============================*/}
                 <div className={styles.content}>
-                    <Routes>
+                    <Outlet/>
+                    {/*<Routes>
+                    //todo: при localhost3000 ми маємо потрапляти на adidas
+
                         <Route path={'/'} element={<Navigate to={'/adidas'}/>}/>
 
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
@@ -43,7 +47,7 @@ function App() {
                         <Route path={PATH.PRICES} element={<Prices/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
-                    </Routes>
+                    </Routes>*/}
                 </div>
             </div>
             <div className={styles.footer}>abibas 2023</div>
