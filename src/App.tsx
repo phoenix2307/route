@@ -6,14 +6,16 @@ import {Puma} from "./components/pages/Puma";
 import {Abibas} from "./components/pages/Abibas";
 import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
-import {Model} from "./components/Model";
+import {Model} from "./components/pages/Model";
+import {Prices} from "./components/pages/Prices";
 
 
 export const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
     ABIBAS: '/abibas',
-    MODEL: '/model'
+    MODEL: '/model',
+    PRICES: '/prices'
 } as const;
 
 function App() {
@@ -26,7 +28,8 @@ function App() {
                     <S.NavWrapper><NavLink to={PATH.ADIDAS}>Adidas</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PUMA}>Puma</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.ABIBAS}>Abibas</NavLink></S.NavWrapper>
-                    {/*<a href="page3">page3 HTML</a>*/}
+                    <hr style={{border: '0px'}}/>
+                    <S.NavWrapper><NavLink to={PATH.PRICES}>Prices for dealers</NavLink></S.NavWrapper>
                 </div>
                 {/*=====================  Routes  ===============================*/}
                 <div className={styles.content}>
@@ -37,6 +40,7 @@ function App() {
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
                         <Route path={'/:company/:id'} element={<Model/>}/>
+                        <Route path={PATH.PRICES} element={<Prices/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                     </Routes>

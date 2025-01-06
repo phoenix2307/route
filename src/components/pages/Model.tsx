@@ -1,7 +1,7 @@
 import React from "react";
-import {adidasArr, AdidasItem} from "./pages/Adidas";
+import {adidasArr, AdidasItem} from "./Adidas";
 import {useParams} from "react-router-dom";
-import {pumasArr, PumasItem} from "./pages/Puma";
+import {pumasArr, PumasItem} from "./Puma";
 
 type CrossModels = {
     [key: string]: AdidasItem[] | PumasItem[]
@@ -15,7 +15,7 @@ const crossData: CrossModels = {
 export const Model = () => {
 
     const {company, id} = useParams()
-    const itemModel = company && crossData[company].find(item => item.id === id)
+    const currentModel = company ? crossData[company].find(item => item.id === id) : null
 
 
     return (
@@ -27,15 +27,15 @@ export const Model = () => {
             alignItems: 'center',
             marginBottom: '75px'
         }}>
-            {itemModel
+            {currentModel
                 ? <>
-                    <p style={{fontSize: '30px', marginBottom: '10px'}}>{itemModel.model}</p>
-                    <p>{itemModel.collection}</p>
-                    <img src={`${itemModel.picture}`}
-                         alt={`${itemModel.model}`}
+                    <p style={{fontSize: '30px', marginBottom: '10px'}}>{currentModel.model}</p>
+                    <p>{currentModel.collection}</p>
+                    <img src={`${currentModel.picture}`}
+                         alt={`${currentModel.model}`}
                          style={{width: '300px', height: 'auto'}}
                     />
-                    <p style={{fontSize: '35px'}}>{itemModel.price}</p>
+                    <p style={{fontSize: '35px'}}>{currentModel.price}</p>
                 </>
                 :
                 <p style={{fontSize: '35px'}}>This model undefined</p>}
